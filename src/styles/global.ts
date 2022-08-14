@@ -19,6 +19,7 @@ body {
 
   background-color: ${props => props.theme['gray-600']};
   color: ${props => props.theme['gray-100']};
+  font: 400 1rem 'Inter', sans-serif;
 }
 
 img, picture, video, canvas, svg {
