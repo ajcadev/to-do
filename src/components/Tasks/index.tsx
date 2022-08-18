@@ -1,4 +1,4 @@
-import { FormContainer, MainContainer, MainContent, TasksList } from "./styles";
+import { FormContainer, MainContainer, TasksList } from "./styles";
 import { PlusCircle } from "phosphor-react";
 import { Task } from "../Task";
 import { TasksInfo } from "../Info";

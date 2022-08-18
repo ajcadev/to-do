@@ -1,22 +1,18 @@
-import { useContext } from "react"
-import { TasksContext } from "../../contexts/TasksContext"
+import { useInfo } from "../../hooks/useInfo"
 import { Created, Done, InfoContainer } from "./styles"
 
 export function TasksInfo() {
-  const { tasks } = useContext(TasksContext)
-  const created = tasks.length
-  const done = tasks.filter(task => task.isDone).length
-
+  const info = useInfo()
   return (
     <InfoContainer>
       <Created>
         <p>Tarefas criadas</p>
-        <span>{created}</span>
+        <span>{info.created}</span>
       </Created>
       <Done>
         <p>Concluídas</p>
-        { done ? (
-          <span>{done} de {created}</span>
+        { info.done ? (
+          <span>{info.done} de {info.created}</span>
         ) : (
           <span>0</span>
         ) }
