@@ -19,15 +19,15 @@ type NewTaskFormInputs = z.infer<typeof newTaskFormSchema>;
 
 
 export function Tasks() {
-  const { tasks, createNewTask } = useContext(TasksContext)
-  const { register, handleSubmit, formState: { isSubmitting } } = useForm<NewTaskFormInputs>({ resolver: zodResolver(newTaskFormSchema) })
+  const { tasks, createTask } = useContext(TasksContext)
+  const { register, handleSubmit, formState: { isSubmitting }, reset } = useForm<NewTaskFormInputs>({ resolver: zodResolver(newTaskFormSchema) })
 
   const numberOfTasks = tasks.length
 
   async function handleCreateNewTask(data: NewTaskFormInputs) {
-    // console.log(data);
-    // await new Promise(resolve => setTimeout(resolve, 2000));
-    await createNewTask(data)
+    const { description } = data
+    await createTask({ description })
+    reset()
   }
 
   return (

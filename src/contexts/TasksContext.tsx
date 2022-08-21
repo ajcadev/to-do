@@ -8,14 +8,14 @@ interface Task {
   isDone: boolean
 }
 
-interface SubTask {
+interface CreateTaskInput {
   description: string
 }
 
 interface TaskContextType {
   tasks: Task[];
   fetchTasks: (query?: string) => Promise<void>
-  createNewTask: (data: SubTask) => Promise<void>
+  createTask: (data: CreateTaskInput) => Promise<void>
 }
 
 interface TasksProviderProps {
@@ -27,13 +27,11 @@ export const TasksContext = createContext({} as TaskContextType);
 export function TasksProvider({ children }: TasksProviderProps) {
   const [tasks, setTasks] = useState<Task[]>([]);
 
-  async function createNewTask({ description }: SubTask) {
-    const newTask = {
-      id: uuidv4(),
-      description,
-      isDone: false
-    }
-    setTasks([...tasks, newTask])
+  async function createTask(data: CreateTaskInput) {
+    const { description } = data
+    const newTask = { id: uuidv4(), description, isDone: false}
+    const response = await api.post('/tasks', newTask)
+    setTasks(state => [response.data, ...state])
   }
 
   async function fetchTasks(query?: string) {
@@ -46,7 +44,7 @@ export function TasksProvider({ children }: TasksProviderProps) {
   }, []);
 
   return (
-    <TasksContext.Provider value={{ tasks, fetchTasks, createNewTask }}>
+    <TasksContext.Provider value={{ tasks, fetchTasks, createTask }}>
       {children}
     </TasksContext.Provider>
   );
