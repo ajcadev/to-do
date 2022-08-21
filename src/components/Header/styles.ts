@@ -1,7 +1,7 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
-  background: ${props => props.theme["gray-700"]};
+  background: ${(props) => props.theme['gray-700']};
 `
 export const HeaderContent = styled.div`
   max-width: 46rem;

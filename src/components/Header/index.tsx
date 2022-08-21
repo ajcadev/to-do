@@ -1,12 +1,12 @@
-import { HeaderContainer, HeaderContent } from "./styles";
+import { HeaderContainer, HeaderContent } from './styles'
 import logoImg from '../../assets/logo.svg'
 
-export function Header(){
+export function Header() {
   return (
     <HeaderContainer>
-    <HeaderContent>
-      <img src={logoImg} alt="" />
-    </HeaderContent>
-  </HeaderContainer>
+      <HeaderContent>
+        <img src={logoImg} alt="" />
+      </HeaderContent>
+    </HeaderContainer>
   )
 }

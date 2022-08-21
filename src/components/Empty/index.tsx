@@ -1,6 +1,6 @@
-import { EmptyContainer, MessageContainer } from "./styles";
+import { EmptyContainer, MessageContainer } from './styles'
 import clipboardImg from '../../assets/clipboard.svg'
-export function Empty(){
+export function Empty() {
   return (
     <EmptyContainer>
       <img src={clipboardImg} alt="" />

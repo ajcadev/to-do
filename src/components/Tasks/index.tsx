@@ -1,26 +1,30 @@
-import { FormContainer, MainContainer, TasksList } from "./styles";
-import { PlusCircle } from "phosphor-react";
-import { Task } from "../Task";
-import { TasksInfo } from "../Info";
-import { Empty } from "../Empty";
-import { useContext } from "react";
-import { TasksContext } from "../../contexts/TasksContext";
-import { Header } from "../Header";
+import { FormContainer, MainContainer, TasksList } from './styles'
+import { PlusCircle } from 'phosphor-react'
+import { Task } from '../Task'
+import { TasksInfo } from '../Info'
+import { Empty } from '../Empty'
+import { useContext } from 'react'
+import { TasksContext } from '../../contexts/TasksContext'
+import { Header } from '../Header'
 
-import * as z from 'zod';
-import { useForm } from "react-hook-form";
-import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 const newTaskFormSchema = z.object({
   description: z.string(),
-});
+})
 
-type NewTaskFormInputs = z.infer<typeof newTaskFormSchema>;
-
+type NewTaskFormInputs = z.infer<typeof newTaskFormSchema>
 
 export function Tasks() {
   const { tasks, createTask } = useContext(TasksContext)
-  const { register, handleSubmit, formState: { isSubmitting }, reset } = useForm<NewTaskFormInputs>({ resolver: zodResolver(newTaskFormSchema) })
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+    reset,
+  } = useForm<NewTaskFormInputs>({ resolver: zodResolver(newTaskFormSchema) })
 
   const numberOfTasks = tasks.length
 
@@ -38,7 +42,8 @@ export function Tasks() {
           <input
             type="text"
             placeholder="Adicione uma nova tarefa"
-            required {...register('description')}
+            required
+            {...register('description')}
           />
           <button type="submit" disabled={isSubmitting}>
             <span>Criar</span>
@@ -48,7 +53,7 @@ export function Tasks() {
         <TasksInfo />
         {numberOfTasks ? (
           <TasksList>
-            {tasks.map(task => {
+            {tasks.map((task) => {
               return <Task key={task.id} task={task} />
             })}
           </TasksList>

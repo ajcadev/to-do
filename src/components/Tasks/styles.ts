@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const MainContainer = styled.section`
   max-width: 46rem;
@@ -16,22 +16,22 @@ export const FormContainer = styled.form`
   input {
     padding: 16px;
     border-radius: 6px;
-    background: ${props => props.theme["gray-500"]};
-    color: ${props => props.theme["gray-100"]};
+    background: ${(props) => props.theme['gray-500']};
+    color: ${(props) => props.theme['gray-100']};
     border: 0;
 
     flex: 1;
 
     &::placeholder {
-      color: ${props => props.theme["gray-300"]};
+      color: ${(props) => props.theme['gray-300']};
     }
   }
 
-  button[type="submit"] {
+  button[type='submit'] {
     border-radius: 8px;
     padding: 16px;
-    background: ${props => props.theme["blue-dark"]};
-    color: ${props => props.theme["gray-100"]};
+    background: ${(props) => props.theme['blue-dark']};
+    color: ${(props) => props.theme['gray-100']};
     border: 0;
     cursor: pointer;
 
@@ -45,8 +45,8 @@ export const FormContainer = styled.form`
       cursor: not-allowed;
     }
 
-    &:not(:disabled):hover  {
-      background-color: ${props => props.theme.blue};
+    &:not(:disabled):hover {
+      background-color: ${(props) => props.theme.blue};
       transition: background-color 0.2s;
     }
   }
@@ -61,4 +61,3 @@ export const TasksList = styled.ul`
   flex-direction: column;
   gap: 0.5rem;
 `
-

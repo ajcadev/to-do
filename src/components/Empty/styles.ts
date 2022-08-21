@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const EmptyContainer = styled.div`
   padding: 48px 24px 0;
@@ -18,7 +18,7 @@ export const EmptyContainer = styled.div`
 
 export const MessageContainer = styled.div`
   text-align: center;
-  color: ${props => props.theme["gray-300"]};
+  color: ${(props) => props.theme['gray-300']};
 
   p {
     font-weight: bold;

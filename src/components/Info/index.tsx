@@ -1,5 +1,5 @@
-import { useInfo } from "../../hooks/useInfo"
-import { Created, Done, InfoContainer } from "./styles"
+import { useInfo } from '../../hooks/useInfo'
+import { Created, Done, InfoContainer } from './styles'
 
 export function TasksInfo() {
   const info = useInfo()
@@ -11,16 +11,14 @@ export function TasksInfo() {
       </Created>
       <Done>
         <p>Concluídas</p>
-        { info.done ? (
-          <span>{info.done} de {info.created}</span>
+        {info.done ? (
+          <span>
+            {info.done} de {info.created}
+          </span>
         ) : (
           <span>0</span>
-        ) }
+        )}
       </Done>
     </InfoContainer>
-
-  )  
+  )
 }
-
-
-
