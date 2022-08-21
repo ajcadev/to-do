@@ -27,19 +27,25 @@ export const FormContainer = styled.form`
     }
   }
 
-  button {
+  button[type="submit"] {
     border-radius: 8px;
     padding: 16px;
     background: ${props => props.theme["blue-dark"]};
     color: ${props => props.theme["gray-100"]};
     border: 0;
+    cursor: pointer;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
 
-    &:hover {
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover  {
       background-color: ${props => props.theme.blue};
       transition: background-color 0.2s;
     }

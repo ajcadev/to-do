@@ -3,7 +3,7 @@ import { TaskContainer } from "./styles";
 
 type TaskProps = {
   task: {
-    id: number
+    id: string
     description: string
     isDone: boolean  
   }
