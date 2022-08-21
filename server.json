@@ -1,24 +1,19 @@
 {
   "tasks": [
     {
-      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+      "id": "7f0058e4-2170-46a8-b909-6e91d6b65387",
+      "description": "Buscar o Samuel no CABV às 11h30",
+      "isDone": false
+    },
+    {
+      "id": "263872b3-a774-4edf-ba9d-c765a33864e0",
+      "description": "Pagar a conta de Luz",
+      "isDone": true
+    },
+    {
+      "id": "97798239-03a9-4559-8d1a-5596f912faba",
       "description": "Estudar ReactJS",
       "isDone": true
-    },
-    {
-      "id": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed",
-      "description": "Estudar CSS",
-      "isDone": true
-    },
-    {
-      "id": "de0932ca-a6d7-45d0-b359-d124d169aaa2",
-      "description": "Pegar o Samuel no CABV",
-      "isDone": false
-    },
-    {
-      "id": "2d6a7cbe-f67c-43d2-a322-3d13a5de7c65",
-      "description": "Pagar a conta de Luz",
-      "isDone": false
     }
   ]
 }
